@@ -1,0 +1,58 @@
+What's New in PostgreSQL 9.5
+
+Jack Christensen
+http://www.jackchristensen.com
+
+* PostgreSQL 9.5
+
+- Released on January 7, 2016
+- Several major features
+- Numerous small improvements
+- Performance improvements
+
+* INSERT / ON CONFLICT
+
+- The ON CONFLICT clause is a fallback in case of unique constraint violation.
+- PostgreSQL guarantees that either the INSERT will succeed or the ON CONFLICT clause will execute.
+- ON CONFLICT DO NOTHING is great for fixtures and seed data.
+- ON CONFLICT DO UPDATE enables UPSERT functionality.
+
+* Grouping Sets, Rollup, and Cube
+
+- Grouping sets allow multiple groupings to be computed in a single query.
+- Rollup is shorthand for specifying multiple grouping sets.
+- Cube is shorthand for all combinations of grouping set expressions.
+
+* Set Multiple Columns from Sub-select
+
+- Alternative way of representing an update
+- Nothing that couldn't already be done with join and/or CTE
+
+* BRIN (Block Range Index)
+
+- Super-efficient index type for columns whose values naturally correlate with physical location
+- Commonly occurs with dates and times
+- Only worth when greater than 10 million rows
+- Only worth it when scanning large quantity of rows (such as aggregates)
+
+* Tablesample
+
+- Find random row quickly
+- Aggregates / reporting on sample
+- bernoulli sampling method is more random
+- system sampling method is based on blocks (much faster, but may be biased)
+
+* SELECT / SKIP LOCKED
+
+- Purposely breaks transaction isolation
+- Locked rows are skipped
+- Ideal for job queues
+
+* Extras
+
+- Row level security
+- More jsonb functions
+- Abbreviated indexes
+- Scales better to more cores
+- Typo suggestions
+- More DDL supports if not exists
