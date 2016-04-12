@@ -1,11 +1,26 @@
 What's New in PostgreSQL 9.5
 
 Jack Christensen
+Senior Developer, Hashrocket
+jack@jackchristensen.com
 http://www.jackchristensen.com
+@j3c10
+
+* Background
+
+- Working in PostgreSQL since 8.4
+- Still excited about PostgreSQL
+- Author of multiple PostgreSQL libraries
+
+.link https://github.com/jackc/pgx pgx - database driver for Go
+.link https://github.com/jackc/surus surus - PostgreSQL Rails / ActiveRecord extensions
+.link https://github.com/jackc/edge edge - Rails / ActiveRecord extension for tree structures with PostgreSQL CTEs
+.link https://github.com/jackc/tern tern - Stand-alone database migration tool
 
 * PostgreSQL 9.5
 
-- Released on January 7, 2016
+- 9.5.0 released on January 7, 2016
+- 9.5.2 released on March 31, 2016
 - Several major features
 - Numerous small improvements
 - Performance improvements
@@ -34,6 +49,7 @@ http://www.jackchristensen.com
 - Commonly occurs with dates and times
 - Only worth when greater than 10 million rows
 - Only worth it when scanning large quantity of rows (such as aggregates)
+- Requires index maintenance if value is inserted that does not fall into last range
 
 * Tablesample
 
@@ -52,7 +68,11 @@ http://www.jackchristensen.com
 
 - Row level security
 - More jsonb functions
-- Abbreviated indexes
+- Abbreviated indexes (partially disabled in 9.5.2)
 - Scales better to more cores
 - Typo suggestions
 - More DDL supports if not exists
+
+* Questions?
+
+- Slides and source code - https://github.com/jackc/pg95-whats-new
